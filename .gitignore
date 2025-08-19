@@ -30,3 +30,18 @@ node_modules/
 # Arquivos de build (caso seja adicionado futuramente)
 dist/
 build/
+
+# Arquivos grandes (PowerPoint, vídeos, etc.)
+*.pptx
+*.ppt
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.mkv
+
+# Arquivos específicos muito grandes
+**/[PROGRAMAÇÃO] OT Júnior.pptx
+**/[ROBÓTICA] OT Júnior.pptx
+**/Autômato maker ideias em movimento – Parte 3.pptx
