@@ -1,0 +1,64 @@
+{
+  "siteConfig": {
+    "siteName": "Portal de Programação e Robótica",
+    "professor": {
+      "nome": "Davi Antonino Nunes da Silva",
+      "cidade": "Sertãozinho",
+      "estado": "São Paulo",
+      "disciplinas": ["Programação", "Robótica Educacional"]
+    },
+    "escola": {
+      "localizacao": "Sertãozinho - SP"
+    },
+    "contato": {
+      "email": "",
+      "telefone": "",
+      "redesSociais": {
+        "linkedin": "",
+        "twitter": "",
+        "github": ""
+      }
+    },
+    "configuracoes": {
+      "anoLetivo": "2025",
+      "versaoSite": "1.0.0",
+      "dataUltimaAtualizacao": "2025-08-18"
+    }
+  },
+  "recursos": {
+    "categorias": [
+      "Recursos Gerais",
+      "Robótica",
+      "Alura",
+      "BNCC"
+    ],
+    "totalRecursos": 15,
+    "totalProjetos": 8,
+    "formatosSuportados": [
+      ".pptx",
+      ".xlsx", 
+      ".pdf",
+      ".docx",
+      ".png",
+      ".jpg",
+      ".stl"
+    ]
+  },
+  "tecnologias": {
+    "frontend": [
+      "HTML5",
+      "CSS3",
+      "JavaScript ES6+"
+    ],
+    "frameworks": [
+      "Font Awesome 6.0"
+    ],
+    "recursos": [
+      "PWA (Progressive Web App)",
+      "Design Responsivo",
+      "Mobile First",
+      "Acessibilidade",
+      "SEO Otimizado"
+    ]
+  }
+}
