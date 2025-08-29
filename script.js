@@ -413,4 +413,42 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Portal de Programação e Robótica carregado com sucesso!');
     console.log('Professor: Davi Antonino Nunes da Silva');
     console.log('Localização: Sertãozinho - SP');
+
+    // Carrossel Automático
+    function initializeCarousels() {
+        const carousels = document.querySelectorAll('.carousel');
+        
+        carousels.forEach(carousel => {
+            const track = carousel.querySelector('.carousel-track');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            let currentIndex = 0;
+            
+            if (slides.length === 0) return;
+            
+            function moveToSlide() {
+                const slideWidth = 100;
+                track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+            }
+            
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                moveToSlide();
+            }
+            
+            // Iniciar o carrossel automático
+            setInterval(nextSlide, 3000); // Muda a cada 3 segundos
+            
+            // Pausar no hover
+            carousel.addEventListener('mouseenter', () => {
+                carousel.style.animationPlayState = 'paused';
+            });
+            
+            carousel.addEventListener('mouseleave', () => {
+                carousel.style.animationPlayState = 'running';
+            });
+        });
+    }
+    
+    // Inicializar carrosseis
+    initializeCarousels();
 });
