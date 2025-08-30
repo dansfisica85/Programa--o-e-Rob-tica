@@ -140,6 +140,26 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilo específico para o Plano de Trabalho */
+.hero-image.plano-trabalho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.plano-trabalho-img {
+    max-width: 500px !important;
+    max-height: 600px !important;
+    border-radius: 15px !important;
+    object-fit: contain !important;
+    border: 3px solid var(--primary-color) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3) !important;
+    background: white;
+    padding: 10px;
+    animation: float 3s ease-in-out infinite;
+}
+
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
@@ -448,6 +468,17 @@ body {
 
     .hero-image i {
         font-size: 4rem;
+    }
+
+    /* Responsividade do Plano de Trabalho */
+    .plano-trabalho-img {
+        max-width: 90% !important;
+        max-height: 400px !important;
+        padding: 5px !important;
+    }
+
+    .hero-image.plano-trabalho {
+        padding: 0.5rem;
     }
 
     .resources-grid {
