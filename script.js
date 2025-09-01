@@ -421,13 +421,37 @@ document.addEventListener('DOMContentLoaded', function() {
         carousels.forEach(carousel => {
             const track = carousel.querySelector('.carousel-track');
             const slides = carousel.querySelectorAll('.carousel-slide');
+            const videos = carousel.querySelectorAll('video');
             let currentIndex = 0;
+            let carouselInterval;
             
             if (slides.length === 0) return;
+            
+            function pauseAllVideos() {
+                videos.forEach(video => {
+                    video.pause();
+                });
+            }
+            
+            function playCurrentVideo() {
+                const currentVideo = slides[currentIndex].querySelector('video');
+                if (currentVideo) {
+                    currentVideo.currentTime = 0;
+                    currentVideo.play().catch(e => {
+                        console.log('Autoplay foi bloqueado pelo navegador:', e);
+                    });
+                }
+            }
             
             function moveToSlide() {
                 const slideWidth = 100;
                 track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+                
+                // Gerenciar reprodução de vídeos
+                pauseAllVideos();
+                setTimeout(() => {
+                    playCurrentVideo();
+                }, 500); // Aguarda a transição do carrossel
             }
             
             function nextSlide() {
@@ -436,16 +460,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Iniciar o carrossel automático
-            setInterval(nextSlide, 3000); // Muda a cada 3 segundos
+            carouselInterval = setInterval(nextSlide, 5000); // Aumentado para 5 segundos para dar tempo de ver o vídeo
             
-            // Pausar no hover
+            // Pausar carrossel e vídeos no hover
             carousel.addEventListener('mouseenter', () => {
-                carousel.style.animationPlayState = 'paused';
+                clearInterval(carouselInterval);
             });
             
             carousel.addEventListener('mouseleave', () => {
-                carousel.style.animationPlayState = 'running';
+                carouselInterval = setInterval(nextSlide, 5000);
             });
+            
+            // Inicializar o primeiro slide
+            moveToSlide();
         });
     }
     
